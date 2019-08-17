@@ -1,11 +1,11 @@
-import React from "react"
-import styled, { keyframes } from "styled-components"
+import React, { useEffect, useState } from "react"
+import styled from "styled-components"
 import logo from "../../images/star.png"
 import palete from "../../pallete"
 const Nav = styled.nav`
   width: 100%;
-  height: 100px;
-  background-color: transparent;
+  height: ${props => (props.visible ? "100px": "80px")};
+  background-color:${props =>(props.visible ? 'rgba(1,1,1,0.5)':'transparent')};
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -14,6 +14,7 @@ const Nav = styled.nav`
   top: 0;
   width: 100%;
   z-index: 99;
+  transition:0.4s;
 `
 
 const UnorderContiner = styled.ul`
@@ -29,28 +30,33 @@ const List = styled.li`
   list-style: none;
   margin-left: 20px;
   padding: 10px;
-  border-radius: 0 8px 0 8px;
+  border-radius: 8px 8px 8px 8px;
   border: 1px solid ${palete.color.primary.main};
-  :hover {
-    text-decoration: none;
-    background-color: ${palete.color.primary.main};
-    cursor: pointer;
-    -webkit-transition: all 0.3s ease-out;
+  -webkit-transition: all 0.3s ease-out;
     -moz-transition: all 0.3s ease-out;
     transition: all 0.3s ease-out;
+  :hover {
+    text-decoration: none;
+    background-color: ${palete.color.primary[900]};
+    border: 1px solid ${palete.color.primary[900]};
+    cursor: pointer;
+  
   }
 `
 const Anchor = styled.a`
-  color: ${palete.color.green.main};
+  color: ${palete.color.aqua[800]};
   text-decoration: none;
-  /* :hover {
-    text-decoration: none;
-    cursor: pointer;
-    -webkit-transition: bottom 0.1s ease-in-out;
+  -webkit-transition: bottom 0.1s ease-in-out;
     -moz-transition: bottom 0.1s ease-in-out;
     -o-transition: bottom 0.1s ease-in-out;
     transition: bottom 0.3s ease-in-out;
-  } */
+  :hover {
+    text-decoration: none;
+    cursor: pointer;
+    color: ${palete.color.aqua[800]};
+
+ 
+  }
 `
 
 const Logo = styled.img`
@@ -63,14 +69,31 @@ const Logo = styled.img`
     transform: rotate(360deg);
   }
 `
+/**
+ * @function onScreen custom hook para observar un nodo en el dom
+ * @param {*} options
+ */
 
 const Navbar = () => {
+  const [visible , setVisible] = useState(false)
+
+  useEffect(()=>{
+    window.addEventListener('scroll',()=>{
+      const isTop = window.scrollY > 200;
+      const nav = document.getElementById('nav')
+      if(isTop){
+       setVisible(true)
+      }else{
+       setVisible(false)
+      }
+    })
+  })
   return (
-    <Nav>
+    <Nav id='nav' visible={visible}>
       <div>
         <Logo src={logo} title="Logo" alt="MinLogo" />
       </div>
-      <div id="navbar">
+      <div>
         <UnorderContiner>
           <List>
             <Anchor href="#">Home</Anchor>
