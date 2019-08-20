@@ -15,7 +15,7 @@ const WeAre = () => (
     <Separador>
       <Trisquel />
     </Separador>
-    <Section styled>
+    <Section id="weare">
       <Subtitle>WE ARE</Subtitle>
       <AboutText>
         Lejos de las diferencias entre religiones, Festival de brujas a creado

@@ -6,13 +6,16 @@ import trisquel from "../../images/trisquel.png"
 import Trisquel from "../trisquel"
 import Section from "../../components/Elements/ContenedorSeccion"
 import Subtitle from "../../components/Elements/Subtitle"
+import palete from '../../pallete'
 //utils
 const Intro = styled.h6`
   letter-spacing: 3px;
+  color:${palete.color.secondary.main};
 `
 const AboutText = styled.p`
   font-family: "Hind", sans-serif;
   text-align: justify;
+  color:#000000;
 `
 const About = () => (
   <div>
@@ -20,7 +23,7 @@ const About = () => (
       <Trisquel />
     </Separador>
 
-    <Section>
+    <Section id="about">
       <Intro>WE ARE WITCHES</Intro>
       <Subtitle>ABOUT US</Subtitle>
       <AboutText>

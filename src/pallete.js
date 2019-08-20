@@ -23,6 +23,9 @@ const palete = {
       900: "#AAC5AA",
       800: "#79C479",
     },
+    white:{
+       main:"#fafafa"
+    },
     error: {
       main: "#E2663F",
       600: "#E2663F",

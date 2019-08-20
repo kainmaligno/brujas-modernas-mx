@@ -17,7 +17,7 @@ const Galery = () => (
     <Separador>
       <Trisquel />
     </Separador>
-    <Section>
+    <Section id="galery">
       <Subtitle>GALERY</Subtitle>
       <AboutText>
         Cada festival de brujas lo realizamos con diferente temática dentro del
