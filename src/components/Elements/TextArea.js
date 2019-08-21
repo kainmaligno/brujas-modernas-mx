@@ -1,16 +1,16 @@
 import styled from "styled-components";
-import palet from '../../pallete';
-export default styled.input`
-  background: ${palet.color.white.main};
+import palette from '../../pallete'
+
+export default styled.textarea`
+background: ${palette.color.white.main};
   border: none;
   outline: 0;
-  height: auto;
+  height: 150px;
   width:100%;
   font-size: 18px;
   line-height: 32px;
-  color: ${palet.color.secondary.main};
+  color:${palette.color.secondary.main};
   font-weight: 400;
-  font-family:Dosis;
   vertical-align: top;
   border: 2px solid white;
   border-radius: 5px;
@@ -20,10 +20,11 @@ export default styled.input`
   cursor: text;
    ${props => (props.label)}; 
   ::placeholder {
-    color: ${palet.color.secondary[800]};
+    color: ${palette.color.secondary[800]};
   }
   :focus {
     transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
-    border: 2px solid ${palet.color.primary.main};
+
+    border: 2px solid ${palette.color.primary.main};
   }
-`;
+`
