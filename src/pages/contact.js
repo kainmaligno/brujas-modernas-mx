@@ -48,8 +48,8 @@ const SecondPage = () => (
         <form 
           netlify
           name="contact-form"
-          method="post"
-          data-neftlify="true"
+          method="POST"
+          data-netlify="true"
           data-netlify-honeypot="bot-field"
           style={{
             display: "flex",
@@ -62,7 +62,7 @@ const SecondPage = () => (
           <Input name="name" type="text" placeholder="Yor name" label />
           <Input name="email" type="email" placeholder="name@name.com" />
           <TextArea  name="textArea" placeholder="Your Message" type="text" />
-          <Button primary>Send Message</Button>
+          <Button primary type='submit'>Send Message</Button>
         </form>
       </MainBox>
       <Link to="/"><Button>Go Back to Home</Button></Link>
