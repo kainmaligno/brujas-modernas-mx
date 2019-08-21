@@ -46,11 +46,12 @@ const SecondPage = () => (
             job@example.com</span>
         </ExtraContact>
         <form 
-          netlify
           name="contact-form"
-          method="POST"
+          method="post"
           data-netlify="true"
           data-netlify-honeypot="bot-field"
+          netlify
+          action='/succes/'
           style={{
             display: "flex",
             flexDirection: "column",
@@ -60,7 +61,7 @@ const SecondPage = () => (
           }}
         >
           <Input name="name" type="text" placeholder="Yor name" label />
-          <Input name="email" type="email" placeholder="name@name.com" />
+          <Input name="email" type="email" placeholder="your email name@name.com" />
           <TextArea  name="textArea" placeholder="Your Message" type="text" />
           <Button primary type='submit'>Send Message</Button>
         </form>
