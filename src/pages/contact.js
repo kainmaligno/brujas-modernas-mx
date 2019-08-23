@@ -47,10 +47,8 @@ const SecondPage = () => (
         </ExtraContact>
         <form 
           name="contact-form"
-          method="post"
+          method="POST"
           data-netlify="true"
-          data-netlify-honeypot="bot-field"
-          netlify
           action='/succes/'
           style={{
             display: "flex",
