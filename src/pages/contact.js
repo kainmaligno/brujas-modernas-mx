@@ -48,8 +48,8 @@ const SecondPage = () => (
         <form 
           name="contact-form"
           method="POST"
-          data-netlify="true"
-          action='/succes/'
+          
+          action="https://formspree.io/labrujamodernaoficial@gmail.com"
           style={{
             display: "flex",
             flexDirection: "column",
@@ -58,6 +58,8 @@ const SecondPage = () => (
             width: "100%",
           }}
         >
+          <input type="hidden" name='_next' value='https://stupefied-carson-3d8b1f.netlify.com/succes/' />
+
           <Input name="name" type="text" placeholder="Yor name" label />
           <Input name="email" type="email" placeholder="your email name@name.com" />
           <TextArea  name="textArea" placeholder="Your Message" type="text" />
