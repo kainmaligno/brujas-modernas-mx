@@ -5,7 +5,7 @@ import Navbar from "../Navbar"
 import SideBar from '../Sidebar'
 // import forest from "../../images/forest.mp4"
 import poster from '../../images/bosque.jpg'
-const video = require('../../images/forest.mp4')
+const video = require('../../images/moon1.mp4')
 
 
 
