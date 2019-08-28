@@ -2,7 +2,6 @@ import React from "react"
 import styled from "styled-components"
 //components
 import Separador from "../Elements/separador"
-import trisquel from "../../images/trisquel.png"
 import Trisquel from "../trisquel"
 import Section from "../../components/Elements/ContenedorSeccion"
 import Subtitle from "../../components/Elements/Subtitle"
@@ -26,7 +25,7 @@ const About = () => (
     <Section id="about">
       <Intro>WE ARE WITCHES</Intro>
       <Subtitle>ABOUT US</Subtitle>
-      <AboutText>
+      <AboutText> 
         Festival de brujas la bruja moderna, los pioneros en crear espacios
         dedicados a las brujas y magos buscando generar empleos a mercaderes y
         artistas e informar a la gente sobre las brujas de la vida real y la

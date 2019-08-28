@@ -9,9 +9,9 @@ const size = {
 }
 
 const device = Object.keys(size).reduce((acc, cur) => {
-  acc[cur] = `(min-width: ${size[cur]}px)`
+  acc[cur] = `(max-width: ${size[cur]}px)`
   //console.log('medidas',acc[cur])
   return acc
 }, {})
-
+console.log(device)
 export default device

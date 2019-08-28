@@ -23,7 +23,8 @@ export default styled.input`
     color: ${palet.color.secondary[800]};
   }
   :focus {
-    transition: border-color ease-in-out 0.15s, box-shadow ease-in-out 0.15s;
+    transition: border-color ease-in-out 0.15s,
+    box-shadow ease-in-out 0.15s;
     border: 2px solid ${palet.color.primary.main};
   }
 `;

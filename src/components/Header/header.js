@@ -11,8 +11,8 @@ const video = require('../../images/moon1.mp4')
 
 const Header = ({ siteTitle }) => (
   <header>
+    {/* <SideBar/> */}
     <Navbar />
-    <SideBar/>
     <div className="hero">
       <video width="100%" height="100vh"  preload='auto' poster={poster} loop autoPlay muted>
         <source src={video} type="video/mp4" />
@@ -26,6 +26,7 @@ const Header = ({ siteTitle }) => (
         </p>
       </div>
     </div>
+
   </header>
 )
 
