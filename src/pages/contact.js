@@ -11,6 +11,7 @@ import Input from "../components/Elements/input"
 import styled from "styled-components"
 import palet from '../pallete'
 import Button from '../components/Elements/Button'
+import device from '../device'
 
 const MainBox = styled.div`
   display: flex;
@@ -20,6 +21,9 @@ const MainBox = styled.div`
   width: 96%;
   height: 70%;
   padding:3%;
+  @media ${device.tablet}{
+   flex-direction:column;
+  }
 `
 
 const ExtraContact = styled.div`
@@ -32,12 +36,15 @@ const ExtraContact = styled.div`
   height: auto;
   letter-spacing:3px;
   color:${palet.color.primary.main};
+  @media ${device.tablet}{
+   display:none;
+  }
 `
 const SecondPage = () => (
   <ContactContainer>
     <SEO title="Contact" />
     <Contact>
-      <Subtitle >Contact us</Subtitle>
+      <Subtitle>Contact us</Subtitle>
       <MainBox>
         <ExtraContact>
           <span>PO Box 16122 Collins Street West Victoria 8007 Australia.</span>
