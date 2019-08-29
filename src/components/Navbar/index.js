@@ -39,6 +39,7 @@ const UnorderContiner = styled.ul`
 const List = styled.li`
   text-decoration: none;
   list-style: none;
+  width:${props => props.mobile ? '100%':''};
   margin-left: 20px;
   padding: 10px;
   font-family: "Hind", sans-serif;
@@ -49,6 +50,8 @@ const List = styled.li`
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   transition: all 0.3s ease-out;
+  /*mobil*/
+
   :hover {
     text-decoration: none;
     color: #000000;
@@ -82,7 +85,8 @@ const MobileNav = styled.nav`
   height: 100%;
   width: 70%;
   z-index: 100;
-  background-color:white;
+  background-color:#020202;
+  border-radius:20px; 
   /* transform: translateX(-100%); */
   transition: transform 0.3s ease-out;
   transform:${props => props.mobile? 'translateX(0)':'translateX(-100%)'};
@@ -123,10 +127,10 @@ const IconMobile = styled.img`
 const ColumnContainer = styled.ul`
   display: flex;
   flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  margin: 2em 2em 2em 2em;
-  background-color: white;
+  justify-content: space-evenly;
+  align-items: unset;
+  margin: 2em 1em 2em 1em;
+  background-color: #020202;
   height: 100%;
   width: 70%;
   z-index:101;
@@ -185,11 +189,53 @@ const Navbar = () => {
         </div>
       <MobileNav mobile={mobile} >
         <ColumnContainer>
-          <li>ABOUT</li>
-          <li>WE ARE</li>
-          <li>GALERY</li>
-          <li>COMMING SOON </li>
-          <li>CONTACT</li>
+        <Link
+              activeClass="active"
+              to="about"
+              spy={true}
+              smooth={true}
+              offset={-230}
+              duration={500}
+              onClick={() => setMobile(false)}  
+            >
+              <List mobile>About</List>
+            </Link>
+            <Link
+              activeClass="active"
+              to="weare"
+              spy={true}
+              smooth={true}
+              offset={-230}
+              duration={500}
+              onClick={() => setMobile(false)}  
+            >
+              <List mobile>We Are</List>
+            </Link>
+            <Link
+              activeClass="active"
+              to="galery"
+              spy={true}
+              smooth={true}
+              offset={-230}
+              duration={500}
+              onClick={() => setMobile(false)}  
+            >
+              <List mobile>Galery</List>
+            </Link>
+            <Link
+              activeClass="active"
+              to="comming"
+              spy={true}
+              smooth={true}
+              offset={-230}
+              duration={500}
+              onClick={() => setMobile(false)}  
+            >
+              <List mobile>Coming soon</List>
+            </Link>
+            <Linkgatsby to="/contact/" style={{ textDecoration: "none" }}>
+              <List mobile>Contact</List>
+            </Linkgatsby>
         </ColumnContainer>
       </MobileNav>
       {backdrop}
