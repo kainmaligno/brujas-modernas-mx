@@ -2,7 +2,6 @@ import React from "react"
 import "./header.css"
 import PropTypes from "prop-types"
 import Navbar from "../Navbar"
-import SideBar from '../Sidebar'
 // import forest from "../../images/forest.mp4"
 import poster from '../../images/bosque.jpg'
 const video = require('../../images/moon1.mp4')
@@ -11,10 +10,9 @@ const video = require('../../images/moon1.mp4')
 
 const Header = ({ siteTitle }) => (
   <header>
-    {/* <SideBar/> */}
     <Navbar />
     <div className="hero">
-      <video width="100%" height="100vh"  preload='auto' poster={poster} loop autoPlay muted>
+      <video width="100%" height="100vh"  preload='auto'  loop autoPlay muted>
         <source src={video} type="video/mp4" />
         Your browser does not support HTML5 video.
       </video>

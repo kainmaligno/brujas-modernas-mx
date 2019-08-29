@@ -112,6 +112,9 @@ const IconMobile = styled.img`
   @media ${device.laptopL} {
     display: none;
   }
+  @media ${device.desktop}{
+    display:none;
+  }
   @media ${device.mobileL} {
     display: inline-flex;
   }
@@ -126,12 +129,22 @@ const ColumnContainer = styled.ul`
   background-color: white;
   height: 100%;
   width: 70%;
-
+  z-index:101;
   & li {
     list-style: none;
     color: black;
   }
 `
+
+ const Backdrop = styled.div`
+ position:fixed;
+ height:100%;
+ width:100%;
+ top:0;
+ left:0;
+ background:rgba(0,0,0,0.3);
+
+ `; 
 /**
  * @function useEffect manejar el scroll de la barra de navegacion
  *
@@ -152,6 +165,11 @@ const Navbar = () => {
       }
     })
   })
+  //backdrop controler todo: refactor on components
+  let backdrop;
+  if(mobile){
+    backdrop = <Backdrop onClick={() => setMobile(false)}/>
+  }
 
   return (
     <>
@@ -174,6 +192,7 @@ const Navbar = () => {
           <li>CONTACT</li>
         </ColumnContainer>
       </MobileNav>
+      {backdrop}
 
       <Nav id="nav" visible={visible}>
         <div>
