@@ -8,6 +8,7 @@ background: ${palette.color.white.main};
   height: 150px;
   width:100%;
   font-size: 18px;
+  font-family:Dosis;
   line-height: 32px;
   color:${palette.color.secondary.main};
   font-weight: 400;

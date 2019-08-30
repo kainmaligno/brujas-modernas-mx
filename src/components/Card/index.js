@@ -2,6 +2,8 @@ import React from "react"
 import Image from "gatsby-image"
 import styled from "styled-components"
 import palet from "../../pallete"
+
+
 const Cardcontainer = styled.div`
   top: 0;
   width: 250px;
@@ -25,7 +27,6 @@ const Cardcontainer = styled.div`
 
 const Card = ({ image }) => (
   <Cardcontainer>
-    {/* <span>card</span> */}
     <Image
       style={{ borderRadius: "8px" }}
       fluid={image}

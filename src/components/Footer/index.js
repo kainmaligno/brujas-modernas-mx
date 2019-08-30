@@ -1,17 +1,24 @@
 import React from "react"
 import styled from "styled-components"
 import device from "../../device"
-import penta from "../../images/gatsby-icon.png"
+import phone from '../../images/phone.png'
+import location from '../../images/location.png'
+import mail from '../../images/mail.png'
+
 const FooterContainer = styled.div`
   position: relative;
   float: left;
   width: 100%;
   clear: both;
+  @media ${device.tablet}{
+    display:none;
+  };
 `
 
 const PrimaryFoot = styled.div`
   color: #acacad;
   background-color: rgba(16, 16, 16, 1);
+ 
 `
 const Container = styled.div`
   padding-top: 80px;
@@ -36,17 +43,6 @@ const FootBox = styled.div`
   font-family:'Helvetica Neue', 'Arial', 'sans-serif';
   color:#ededed !important;
   font-size:15px;
-
-  /* @media ${device.desktop} {
-    width: 33.3%;
-  }
-  @media ${device.mobileM} {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-  }
-  @media ${device.laptop} {
-  } */
 `
 
 const SecondaryFoot = styled.div`
@@ -78,13 +74,13 @@ const Footer = () => (
       <Container>
         <FootBox>
           <span>
-            <img alt="img" src={penta} style={{ height: 50, width: 50 }} />{" "}
+            <img alt="img" src={phone} style={{ height: 50, width: 50 }} />{" "}
           </span>
           <span>(+44) 239 121 332</span>
         </FootBox>
         <FootBox>
           <span>
-            <img alt="img1" src={penta} style={{ height: 50, width: 50 }} />{" "}
+            <img alt="img1" src={location} style={{ height: 50, width: 50 }} />{" "}
           </span>
 
           <span style={{ textAlign: "center" }}>
@@ -93,7 +89,7 @@ const Footer = () => (
         </FootBox>
         <FootBox>
           <span>
-            <img alt="img2" src={penta} style={{ height: 50, width: 50 }} />{" "}
+            <img alt="img2" src={mail} style={{ height: 50, width: 50 }} />{" "}
           </span>
 
           <span style={{ textAlign: "center" }}>
