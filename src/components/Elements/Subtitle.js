@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import device from '../../device'
 export default styled.h2`
   font-family: Dosis;
   font-size: 2.5em;

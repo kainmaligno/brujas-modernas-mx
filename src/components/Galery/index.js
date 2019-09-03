@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { useStaticQuery, StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 import { Link } from 'gatsby'
 //components
-import Cards from "../Card"
 import Image from "gatsby-image"
 import palet from "../../pallete"
 
@@ -41,7 +40,7 @@ const Intro = styled.h6`
 const Portfolio = () => {
   const data = useStaticQuery(graphql`
     {
-      cover: file(relativePath: { eq: "cover.jpg" }) {
+      cover: file(relativePath: { eq: "cover2.jpeg" }) {
         childImageSharp {
           fluid(maxHeight: 200, maxWidth: 200, quality: 100) {
             src
@@ -58,7 +57,7 @@ const Portfolio = () => {
     <ImageContainer>
       <Link  style={{textDecoration:'none'}} to='galeria'>
       <Cardcontainer>
-        <Intro>Teotihuacan</Intro>
+        <Intro>Festival Tierra magica</Intro>
           <Image
           style={{ borderRadius: "8px" }}
           fluid={data.cover.childImageSharp.fluid}

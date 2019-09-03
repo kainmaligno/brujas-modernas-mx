@@ -1,9 +1,8 @@
 import React from "react"
 import styled from "styled-components"
-import { useStaticQuery, StaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql } from "gatsby"
 //components
 import Cards from "../Card"
-import Image from "gatsby-image"
 
 const ImageContainer = styled.div`
   max-width: 1300px;

@@ -4,7 +4,6 @@ import palet from '../../pallete'
 let mainColor = palet.color.primary[900];
 let mainWhite = palet.color.white.main;
 let mainGreen = palet.color.secondary.main;
-let lightGreen = palet.color.green.main;
 
 export default styled.button`
   margin: 20px;

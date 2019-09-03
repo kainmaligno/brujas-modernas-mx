@@ -3,7 +3,6 @@ import "./header.css"
 import PropTypes from "prop-types"
 import Navbar from "../Navbar"
 // import forest from "../../images/forest.mp4"
-import poster from '../../images/bosque.jpg'
 const video = require('../../images/moon1.mp4')
 
 

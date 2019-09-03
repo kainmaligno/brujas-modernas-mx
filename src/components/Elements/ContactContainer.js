@@ -1,5 +1,4 @@
 import styled from "styled-components"
-import palet from "../../pallete"
 export default styled.section`
   height: 100vh;
   width: auto;

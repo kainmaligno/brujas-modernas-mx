@@ -13,5 +13,4 @@ const device = Object.keys(size).reduce((acc, cur) => {
   //console.log('medidas',acc[cur])
   return acc
 }, {})
-console.log(device)
 export default device
