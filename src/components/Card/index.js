@@ -1,5 +1,5 @@
-import React, { useState} from "react"
-import Slider from '../Slider'
+import React, { useState } from "react"
+import Slider from "../Slider"
 import Image from "gatsby-image"
 import styled from "styled-components"
 import palet from "../../pallete"
@@ -20,12 +20,16 @@ const Cardcontainer = styled.div`
 `
 const Backdrop = styled.div`
   position: fixed;
-  z-index:100;
+  z-index: 100;
   height: 100%;
   width: 100%;
   top: 0;
   left: 0;
-  background:rgba(0,0,0,0.5);
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `
 
 /**
@@ -33,29 +37,54 @@ const Backdrop = styled.div`
  * @param image from component
  * @param title string from component
  * @params props  all other information about the componnet
+ *
  */
 
-const Card = ({ image, ...props }) => {
+const Card = ({ image, i }) => {
   const [visible, setVisible] = useState(false)
 
+  let backdrop = <Backdrop onClick={() => setVisible(false)} />
+
+  if (visible) {
+    return (
+      <Backdrop onClick={() => setVisible(false)}>
+        <div
+          style={{
+            height: "80%",
+            width: "80%",
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            alignContent: "center",
+
+            zIndex: "200",
+          }}
+        >
+          <Image
+            style={{
+              height: "100%",
+              width: "80%",
+              borderRadius: "8px",
+              border: "2px solid red",
+            }}
+            fluid={image}
+          />
+        </div>
+      </Backdrop>
+       
+      
+    )
+  }
   return (
-    <div>
-      {visible? ( 
-      <Backdrop onClick={()=>setVisible(false)}>
-       <Slider/>
-      </Backdrop>)
-       :
-      (
-        <Cardcontainer  onClick={()=>setVisible(true)}>
-        <Image
-          style={{ borderRadius: "8px" }}
-          fluid={image}
-          alt={image.originalName}
-          title={image.originalName}
-        />
-      </Cardcontainer>
-      )}
-    </div>
+    <Cardcontainer onClick={() => setVisible(true)}>
+      <Image
+        style={{ borderRadius: "8px" }}
+        fluid={image}
+        alt={image.originalName}
+        title={image.originalName}
+        key={i}
+      />
+    </Cardcontainer>
   )
 }
 

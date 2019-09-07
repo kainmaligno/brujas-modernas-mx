@@ -10,7 +10,6 @@ import SEO from "../components/seo"
 import Footer from "../components/Footer"
 //componnentes
 import Cards from "../components/Card"
-import Slider from '../components/Slider'
 
 const ImageContainer = styled.div`
   max-width: 1300px;
@@ -145,7 +144,8 @@ const Backdrop = styled.div`
 const Galeria = ({props}) => {
   const [visible, setVisible] = useState(false)
   const [mobile, setMobile] = useState(false)
-
+ 
+  /**useEffect fr scroll on navbar  */
   useEffect(() => {
     window.addEventListener("scroll", () => {
       const isTop = window.scrollY > 200
@@ -181,6 +181,9 @@ if (mobile) {
       }
     }
   `)
+  const handleClick = (e) => {
+    console.log('estas en click')
+  }
 
   return (
     <div>
@@ -237,10 +240,13 @@ if (mobile) {
           </List>
         </Linkgatsby>
       </Nav>
-      <ImageContainer>
+      <ImageContainer >
         {Object.keys(data).length ? (
           data.allFile.edges.map((image, i) => {
-            return <Cards image={image.node.childImageSharp.fluid} key={i} />
+            return <Cards 
+            slider={image} 
+            image={image.node.childImageSharp.fluid} 
+            key={i}  />
           })
         ) : (
           <div>loading...</div>
