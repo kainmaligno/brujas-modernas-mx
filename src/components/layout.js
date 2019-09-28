@@ -11,10 +11,8 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header/header"
 import Footer from "./Footer"
-import Social from "./SocialMedia"
 import "./layout.css"
 import styled from 'styled-components'
-import SocialMedia from "./SocialMedia"
 
 
 const Lay = styled.div`
