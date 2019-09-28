@@ -18,7 +18,7 @@ const Galery = () => (
       <Trisquel />
     </Separador>
     <Section id="galery">
-      <Subtitle>GALERY</Subtitle>
+      <Subtitle>GALERIA</Subtitle>
       <AboutText>
         Cada festival de brujas lo realizamos con diferente temática dentro del
         tema mágico, como festival de brujas y hadas, potterico, o celebrando

@@ -16,7 +16,7 @@ const WeAre = () => (
       <Trisquel />
     </Separador>
     <Section id="weare">
-      <Subtitle>WE ARE</Subtitle>
+      <Subtitle>NOSOTROS SOMOS!</Subtitle>
       <AboutText>
         Lejos de las diferencias entre religiones, Festival de brujas a creado
         espacios donde las brujas y magos de diferentes creencias y religiones

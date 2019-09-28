@@ -11,11 +11,14 @@ import { useStaticQuery, graphql } from "gatsby"
 
 import Header from "./Header/header"
 import Footer from "./Footer"
+import Social from "./SocialMedia"
 import "./layout.css"
 import styled from 'styled-components'
+import SocialMedia from "./SocialMedia"
 
 
 const Lay = styled.div`
+  position: relative;
 
 `;
 
@@ -33,6 +36,7 @@ const Layout = ({ children }) => {
   return (
     <Lay>
       <Header siteTitle={data.site.siteMetadata.title} />
+
       <div
         style={{
           margin: `0 auto`,
@@ -42,6 +46,7 @@ const Layout = ({ children }) => {
           flexGrow: 1,
         }}
       >
+
         <main>{children}</main>
       </div>
         <Footer/>

@@ -5,6 +5,9 @@ import palete from "../../pallete"
 import device from "../../device"
 import { Link, animateScroll as scroll } from "react-scroll"
 import { Link as Linkgatsby } from "gatsby"
+import faceIcon from "../../../public/icons/facebook-brands.svg"
+import instagram from "../../../public/icons/instagram.svg"
+import youtube from "../../../public/icons/youtube-brands.svg"
 
 const Nav = styled.nav`
   width: 100%;
@@ -23,6 +26,7 @@ const Nav = styled.nav`
   @media ${device.mobileL} {
     display: none;
   }
+
 `
 
 const UnorderContiner = styled.ul`
@@ -34,6 +38,17 @@ const UnorderContiner = styled.ul`
   margin: 2em 2em 2em 2em;
   @media ${device.mobileL} {
     display: none;
+  }
+  @media ${device.tablet}{
+    display:none;
+
+  }
+  @media ${device.laptop}{
+    display:flex;
+    flex-direction:row;
+    justify-content:center;
+    width: max-content;
+    
   }
 `
 const List = styled.li`
@@ -59,6 +74,22 @@ const List = styled.li`
     border: 1px solid ${palete.color.primary[900]};
     cursor: pointer;
   }
+ 
+  @media only screen and (max-width:1024px){
+    display:none;
+  }
+  @media only screen and ${device.mobileS}{
+    display:flex;
+  }
+  @media only screen and ${device.mobileM}{
+    display:flex;
+  }
+
+  @media only screen and ${device.mobileL}{
+    display:flex;
+  }
+ 
+ 
 `
 const Logo = styled.img`
   border-radius: 50%;
@@ -67,12 +98,14 @@ const Logo = styled.img`
   margin: 2em 2em 2em 2em;
   transition: transform 200ms ease-in-out;
   cursor: pointer;
+  background-color:${props => props.icon? '#fafafa':'none'};
+  padding:${props => props.icon? '3px': 'none'};
   &:hover {
     transform: rotate(360deg);
   }
-  @media ${device.mobileL} {
-    display: none;
-  }
+  /*@media ${device.mobileL} {
+    display: flex;
+  }*/
 `
 //mobile settings
 
@@ -93,11 +126,24 @@ const MobileNav = styled.nav`
   /* transform: translateX(0); */
 
   @media ${device.desktop}{
-    display:none;
+    display:flex;
+    width: 80%;
+
   }
-  @media ${device.mobileL}{
+  @media only screen and ${device.mobileS}{
     display:flex;
   }
+  @media only screen and ${device.mobileM}{
+    display:flex;
+  }
+  @media only screen and ${device.mobileL}{
+    display:flex;
+    width: 80%;
+
+  }
+
+ 
+ 
 `
 
 const IconMobile = styled.img`
@@ -131,13 +177,17 @@ const ColumnContainer = styled.ul`
   align-items: unset;
   margin: 2em 1em 2em 1em;
   background-color: #020202;
-  height: 100%;
-  width: 70%;
+  height: ${props => props.mobile? '':'100%'};
+  width: ${props => props.mobile? '87%': '70%'};
   z-index:101;
+  flex-flow:${props => props.mobile? 'row':''};
+  margin-left${props => props.mobile? '2em':''}
   & li {
     list-style: none;
     color: black;
   }
+
+
 `
 
  const Backdrop = styled.div`
@@ -198,7 +248,7 @@ const Navbar = () => {
               duration={500}
               onClick={() => setMobile(false)}  
             >
-              <List mobile>About</List>
+              <List mobile>Acerca De</List>
             </Link>
             <Link
               activeClass="active"
@@ -209,7 +259,7 @@ const Navbar = () => {
               duration={500}
               onClick={() => setMobile(false)}  
             >
-              <List mobile>We Are</List>
+              <List mobile>Somos!</List>
             </Link>
             <Link
               activeClass="active"
@@ -220,7 +270,7 @@ const Navbar = () => {
               duration={500}
               onClick={() => setMobile(false)}  
             >
-              <List mobile>Galery</List>
+              <List mobile>Galeria</List>
             </Link>
             <Link
               activeClass="active"
@@ -231,11 +281,58 @@ const Navbar = () => {
               duration={500}
               onClick={() => setMobile(false)}  
             >
-              <List mobile>Coming soon</List>
+              <List mobile>Proximamente</List>
             </Link>
             <Linkgatsby to="/contact/" style={{ textDecoration: "none" }}>
-              <List mobile>Contact</List>
+              <List mobile>Contacto</List>
             </Linkgatsby>
+            <ColumnContainer mobil>
+            <div>
+              <a href="https://www.facebook.com/FestivalBrujas/" target="_blank">
+              <Logo
+              icon
+              src={faceIcon}
+              title="Festival de Brujas"
+              alt="Festival de brujas"
+              />
+              </a> 
+             
+              </div>
+              <div>
+              <a href="https://www.facebook.com/El-Aquelarre-328246424785272/" target="_blank">
+              <Logo
+              icon
+              src={faceIcon}
+              title="El Aquelarre"
+              alt="El aquelarre"
+              />
+                </a> 
+             
+              </div>
+              <div>
+              <a href="https://www.instagram.com/festival_de_brujas_mx/?hl=es-la" target="_blank">
+              <Logo
+              icon
+              src={instagram}
+              title="FestivalBrujas Instagram"
+              alt="Brujas Modernas Instagram"
+              />
+                </a> 
+             
+              </div>
+              <div>
+              <a href="https://www.youtube.com/channel/UCLegGX_n-nllzE3Ldngphkw" target="_blank">
+              <Logo
+              icon
+              src={youtube}
+              title="Festival De Brujas Festival de Brujas México"
+              alt="Brujas Modernas YouTube"
+              />
+                </a> 
+             
+              </div>
+            </ColumnContainer>
+           
         </ColumnContainer>
       </MobileNav>
       {backdrop}
@@ -251,6 +348,58 @@ const Navbar = () => {
         </div>
 
         <div>
+          <UnorderContiner>
+            
+            <div>
+              <a href="https://www.facebook.com/FestivalBrujas/" target="_blank">
+              <Logo
+              icon
+              src={faceIcon}
+              title="Festival de Brujas"
+              alt="Festival de brujas"
+              />
+              </a> 
+             
+              </div>
+              <div>
+              <a href="https://www.facebook.com/El-Aquelarre-328246424785272/" target="_blank">
+              <Logo
+              icon
+              src={faceIcon}
+              title="El Aquelarre"
+              alt="El aquelarre"
+              />
+                </a> 
+             
+              </div>
+              <div>
+              <a href="https://www.instagram.com/festival_de_brujas_mx/?hl=es-la" target="_blank">
+              <Logo
+              icon
+              src={instagram}
+              title="FestivalBrujas Instagram"
+              alt="Brujas Modernas Instagram"
+              />
+                </a> 
+             
+              </div>
+              <div>
+              <a href="https://www.youtube.com/channel/UCLegGX_n-nllzE3Ldngphkw" target="_blank">
+              <Logo
+              icon
+              src={youtube}
+              title="Festival De Brujas Festival de Brujas México"
+              alt="Brujas Modernas YouTube"
+              />
+                </a> 
+             
+              </div>
+          
+              
+          </UnorderContiner>
+        </div>
+
+        <div>
           <UnorderContiner id="nav-items">
             <Link
               activeClass="active"
@@ -260,7 +409,7 @@ const Navbar = () => {
               offset={-230}
               duration={500}
             >
-              <List>About</List>
+              <List>Acerca de </List>
             </Link>
 
             <Link
@@ -271,7 +420,7 @@ const Navbar = () => {
               offset={-100}
               duration={500}
             >
-              <List>We are</List>
+              <List>Nosotros somos!</List>
             </Link>
 
             <Link
@@ -282,7 +431,7 @@ const Navbar = () => {
               offset={-100}
               duration={500}
             >
-              <List>Galery</List>
+              <List>Galeria</List>
             </Link>
 
             <Link
@@ -293,11 +442,11 @@ const Navbar = () => {
               offset={-100}
               duration={500}
             >
-              <List>Comming soon</List>
+              <List>Proximamente</List>
             </Link>
 
             <Linkgatsby to="/contact/" style={{ textDecoration: "none" }}>
-              <List>Contact</List>
+              <List>Contacto</List>
             </Linkgatsby>
           </UnorderContiner>
         </div>

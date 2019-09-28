@@ -17,7 +17,7 @@ const Events = () => (
       <Trisquel />
     </Separador>
     <Section  id="comming">
-      <Subtitle>COMING SOON...!</Subtitle>
+      <Subtitle>PROXIMAMENTE!</Subtitle>
       <AboutText>
         Con el fin de que cada bruja y mago pueda celebrar su poder, la magia y
         los dioses.

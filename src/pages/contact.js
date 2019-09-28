@@ -44,13 +44,13 @@ const SecondPage = () => (
   <ContactContainer>
     <SEO title="Contact" />
     <Contact>
-      <Subtitle>Contact us</Subtitle>
+      <Subtitle>Envianos un Email!!!</Subtitle>
       <MainBox>
         <ExtraContact>
-          <span>PO Box 16122 Collins Street West Victoria 8007 Australia.</span>
-          <span>(+44) 239 121 332.</span>
-          <span> hello@example.com <br />
-            job@example.com</span>
+          <span>Mexico, CDMX</span><br/>
+          <span>(+52) 15611038379</span><br/>
+          <span> labrujamodernaoficial@gmail.com<br />
+            </span>
         </ExtraContact>
         <form 
           name="contact-form"
@@ -70,10 +70,10 @@ const SecondPage = () => (
           <Input name="name" type="text" placeholder="Yor name" label />
           <Input name="email" type="email" placeholder="your email name@name.com" />
           <TextArea  name="textArea" placeholder="Your Message" type="text" />
-          <Button primary type='submit'>Send Message</Button>
+          <Button primary type='submit'>Enviar Mensaje</Button>
         </form>
       </MainBox>
-      <Link to="/"><Button>Go Back to Home</Button></Link>
+      <Link to="/"><Button>Regresa al Home</Button></Link>
     </Contact>
   </ContactContainer>
 )

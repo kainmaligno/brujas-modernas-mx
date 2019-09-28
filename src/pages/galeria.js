@@ -10,6 +10,9 @@ import SEO from "../components/seo"
 import Footer from "../components/Footer"
 //componnentes
 import Cards from "../components/Card"
+import faceIcon from "../../public/icons/facebook-brands.svg"
+import instagram from "../../public/icons/instagram.svg"
+import youtube from "../../public/icons/youtube-brands.svg"
 
 const ImageContainer = styled.div`
   max-width: 1300px;
@@ -48,6 +51,8 @@ const Logo = styled.img`
   margin: 2em 2em 2em 2em;
   transition: transform 200ms ease-in-out;
   cursor: pointer;
+  background-color:${props => props.icon? '#fafafa':'none'};
+  padding: ${props => props.icon? '3px': 'none'};
   &:hover {
     transform: rotate(360deg);
   }
@@ -174,6 +179,8 @@ if (mobile) {
               fluid(maxWidth: 960, maxHeight: 760) {
                 originalName
                 ...GatsbyImageSharpFluid
+                presentationWidth
+
               }
             }
           }
@@ -187,7 +194,7 @@ if (mobile) {
 
   return (
     <div>
-     <SEO title="Galery" />
+      <SEO title=" Festival Brujas Modernas Galeria" />
       <div>
         <IconMobile
           src={logo}
@@ -198,55 +205,95 @@ if (mobile) {
         />
       </div>
       <MobileNav mobile={mobile}>
-        <Linkgatsby
-          to="/"
-          style={{ textDecoration: "none", width:'70%' }}
-        >
-          <List mobile={mobile}>
-            Pagina Principal
-          </List>
+        <Linkgatsby to="/" style={{ textDecoration: "none", width: "70%" }}>
+          <List mobile={mobile}>Pagina Principal</List>
         </Linkgatsby>
-        <Linkgatsby to="/contact/" style={{ textDecoration: "none",width:'70%' }}>
-          <List mobile={mobile}>
-            Contacto
-          </List>
+        <Linkgatsby
+          to="/contact/"
+          style={{ textDecoration: "none", width: "70%" }}
+        >
+          <List mobile={mobile}>Contacto</List>
         </Linkgatsby>
       </MobileNav>
       {backdrop}
 
       {/** nav mob bar  */}
 
-
       <Nav id="nav" visible={visible}>
-        <div>
+        <div style={{display:'flex', flexDirection:'row',justifyContent:'center',alignItems:'center',marginRight:'2em'}}>
+          
+            <Linkgatsby
+              to="/"
+              style={{ textDecoration: "none", marginRight: "2em" }}
+            >
+              <Logo src={logo} title="Logo" alt="MinLogo" />
+            </Linkgatsby>
+          
           <Linkgatsby
             to="/"
             style={{ textDecoration: "none", marginRight: "2em" }}
           >
-            <Logo src={logo} title="Logo" alt="MinLogo" />
+            <List visible={visible}>Pagina Principal</List>
+          </Linkgatsby>
+          <Linkgatsby to="/contact/" style={{ textDecoration: "none" }}>
+            <List visible={visible}>Contacto</List>
           </Linkgatsby>
         </div>
-        <Linkgatsby
-          to="/"
-          style={{ textDecoration: "none", marginRight: "2em" }}
-        >
-          <List  visible={visible}>
-            Pagina Principal
-          </List>
-        </Linkgatsby>
-        <Linkgatsby to="/contact/" style={{ textDecoration: "none" }}>
-          <List  visible={visible}>
-            Contacto
-          </List>
-        </Linkgatsby>
+        <div>
+          <a href="https://www.facebook.com/FestivalBrujas/" target="_blank">
+            <Logo
+              icon
+              src={faceIcon}
+              title="Festival de Brujas"
+              alt="Festival de brujas"
+            />
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://www.facebook.com/El-Aquelarre-328246424785272/"
+            target="_blank"
+          >
+            <Logo icon src={faceIcon} title="El Aquelarre" alt="El aquelarre" />
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://www.instagram.com/festival_de_brujas_mx/?hl=es-la"
+            target="_blank"
+          >
+            <Logo
+              icon
+              src={instagram}
+              title="FestivalBrujas Instagram"
+              alt="Brujas Modernas Instagram"
+            />
+          </a>
+        </div>
+        <div>
+          <a
+            href="https://www.youtube.com/channel/UCLegGX_n-nllzE3Ldngphkw"
+            target="_blank"
+          >
+            <Logo
+              icon
+              src={youtube}
+              title="Festival De Brujas Festival de Brujas México"
+              alt="Brujas Modernas YouTube"
+            />
+          </a>
+        </div>
       </Nav>
-      <ImageContainer >
+      <ImageContainer>
         {Object.keys(data).length ? (
           data.allFile.edges.map((image, i) => {
-            return <Cards 
-            slider={image} 
-            image={image.node.childImageSharp.fluid} 
-            key={i}  />
+            return (
+              <Cards
+                slider={image}
+                image={image.node.childImageSharp.fluid}
+                key={i}
+              />
+            )
           })
         ) : (
           <div>loading...</div>

@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 import Slider from "../Slider"
-import Image from "gatsby-image"
+import Image from "gatsby-image/withIEPolyfill"
 import styled from "styled-components"
 import palet from "../../pallete"
 
@@ -43,6 +43,22 @@ const Backdrop = styled.div`
 const Card = ({ image, i }) => {
   const [visible, setVisible] = useState(false)
 
+  const NonStretchedImage = props => {
+    let normalizedProps = props
+    if (props.fluid && props.fluid.presentationWidth) {
+      normalizedProps = {
+        ...props,
+        style: {
+          ...(props.style || {}),
+          maxWidth: props.fluid.presentationWidth,
+          margin: "0 auto", // Used to center the image
+        },
+      }
+    }
+  
+    return <Image {...normalizedProps} />
+  }
+
   let backdrop = <Backdrop onClick={() => setVisible(false)} />
 
   if (visible) {
@@ -56,11 +72,13 @@ const Card = ({ image, i }) => {
             flexDirection: "row",
             justifyContent: "center",
             alignContent: "center",
-
+            resizeMode:"container",
+            alignSelf:"center",
             zIndex: "200",
           }}
         >
           <Image
+            props
             style={{
               height: "100%",
               width: "80%",

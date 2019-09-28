@@ -16,7 +16,7 @@ export default styled.section`
   -webkit-transition: all 0.5s ease-out;
   -moz-transition: all 0.5s ease-out;
   :hover {
-    background-color: ${palet.color.secondary[800]};
+    background-color: ${palet.color.white.main};
     border: 3px solid ${palet.color.primary.main};
     color: ${palet.color.primary.main};
     box-shadow:${palet.color.primary[900]};

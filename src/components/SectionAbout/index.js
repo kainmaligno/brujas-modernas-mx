@@ -23,8 +23,8 @@ const About = () => (
     </Separador>
 
     <Section id="about">
-      <Intro>WE ARE WITCHES</Intro>
-      <Subtitle>ABOUT US</Subtitle>
+      <Intro>SOMOS BRUJAS</Intro>
+      <Subtitle>ACERCA DE NOSOTROS</Subtitle>
       <AboutText> 
         Festival de brujas la bruja moderna, los pioneros en crear espacios
         dedicados a las brujas y magos buscando generar empleos a mercaderes y

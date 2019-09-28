@@ -76,7 +76,7 @@ const Footer = () => (
           <span>
             <img alt="img" src={phone} style={{ height: 50, width: 50 }} />{" "}
           </span>
-          <span>(+44) 239 121 332</span>
+          <span>(+52) 15611038379</span>
         </FootBox>
         <FootBox>
           <span>
@@ -84,7 +84,7 @@ const Footer = () => (
           </span>
 
           <span style={{ textAlign: "center" }}>
-            PO Box 16122 Collins Street West Victoria 8007 Australia
+            Mexico, CDMX 
           </span>
         </FootBox>
         <FootBox>
@@ -93,8 +93,8 @@ const Footer = () => (
           </span>
 
           <span style={{ textAlign: "center" }}>
-            hello@example.com <br />
-            job@example.com
+          labrujamodernaoficial@gmail.com <br />
+          
           </span>
         </FootBox>
       </Container>
@@ -109,12 +109,30 @@ const Footer = () => (
           Brujas © Sandra Ramirez / ©
         </p>
         {` `}
+        <div style={{
+          display:'flex', 
+          flexDirection:'row',
+          justifyContent:'space-evenly',
+          alignItems:'center',
+          width: '-webkit-fill-available'
+        }}>
         <a
           style={{ textDecoration: "none", color: "#dedede" }}
-          href="https://www.google.com"
+          href="https://www.salemmthedeveloper.com"
         >
-          Drakar zamael
+         Creado por  Salemm
         </a>
+        {` `}
+
+        <span>An d</span>
+        <a
+        style={{ textDecoration: "none", color: "#dedede" }}
+        href="https://www.spartans.dev"
+        >
+          Spartans.Dev
+        </a>
+        </div>
+       
       </SecondContainer>
     </SecondaryFoot>
   </FooterContainer>

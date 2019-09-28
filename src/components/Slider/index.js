@@ -32,9 +32,11 @@ const Slider = () => {
           node {
             relativePath
             childImageSharp {
-              fixed(width: 500, height: 500) {
+              fluid(maxWidth: 500, maxHeight: 500) {
                 originalName
-                ...GatsbyImageSharpFixed
+                ...GatsbyImageSharpFluid
+                presentationWidth
+
               }
             }
           }
@@ -58,7 +60,8 @@ const Slider = () => {
       >
         {Object.keys(data).length ? (
           data.allFile.edges.map((image, i) => {
-            return <Image fixed={image.node.childImageSharp.fixed} />
+            return <Image fixed={image.node.childImageSharp.fluid}/>
+              
           })
         ) : (
           <div>no hay nadie</div>
