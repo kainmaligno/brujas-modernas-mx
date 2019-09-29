@@ -21,7 +21,7 @@ function SEO({ description, lang, meta, title, image, url }) {
             description
             author
             image
-            
+            url
           }
         }
       }
@@ -98,6 +98,7 @@ SEO.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
   image: PropTypes.string,
+  url:PropTypes.string,
 
 }
 
