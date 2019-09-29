@@ -6,6 +6,8 @@ import Trisquel from "../trisquel"
 import Section from "../../components/Elements/ContenedorSeccion"
 import Subtitle from "../../components/Elements/Subtitle"
 import palete from '../../pallete'
+//image
+import Logo from '../logo'
 //utils
 const Intro = styled.h6`
   letter-spacing: 3px;
@@ -24,7 +26,8 @@ const About = () => (
 
     <Section id="about">
       <Intro>SOMOS BRUJAS</Intro>
-      <Subtitle>ACERCA DE NOSOTROS</Subtitle>
+      <Logo/>
+      <Subtitle>LA BRUJA MODERNA</Subtitle>
       <AboutText> 
         Festival de brujas la bruja moderna, los pioneros en crear espacios
         dedicados a las brujas y magos buscando generar empleos a mercaderes y

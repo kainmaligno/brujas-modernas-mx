@@ -1,5 +1,4 @@
 import React, { useState } from "react"
-import Slider from "../Slider"
 import Image from "gatsby-image/withIEPolyfill"
 import styled from "styled-components"
 import palet from "../../pallete"
@@ -43,7 +42,7 @@ const Backdrop = styled.div`
 const Card = ({ image, i }) => {
   const [visible, setVisible] = useState(false)
 
-  const NonStretchedImage = props => {
+  /*const NonStretchedImage = props => {
     let normalizedProps = props
     if (props.fluid && props.fluid.presentationWidth) {
       normalizedProps = {
@@ -58,8 +57,8 @@ const Card = ({ image, i }) => {
   
     return <Image {...normalizedProps} />
   }
-
-  let backdrop = <Backdrop onClick={() => setVisible(false)} />
+*/
+ // let backdrop = <Backdrop onClick={() => setVisible(false)} />
 
   if (visible) {
     return (

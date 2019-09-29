@@ -111,7 +111,23 @@ const MobileNav = styled.nav`
     justify-content:center;
   }
 `
-
+const VideoContainer = styled.div`
+     width: 100vw;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-flow: wrap;
+    @media only screen and ${device.laptop}{
+      justify-content:center;
+    }
+`
+const videoCard = styled.div`
+    padding: 2em;
+    width: auto;
+    height: auto;
+    margin: 2em;
+`
 const IconMobile = styled.img`
   border-radius: 50%;
   height: 3em;
@@ -180,7 +196,6 @@ if (mobile) {
                 originalName
                 ...GatsbyImageSharpFluid
                 presentationWidth
-
               }
             }
           }
@@ -188,9 +203,9 @@ if (mobile) {
       }
     }
   `)
-  const handleClick = (e) => {
+  /*const handleClick = (e) => {
     console.log('estas en click')
-  }
+  }*/
 
   return (
     <div>
@@ -240,7 +255,7 @@ if (mobile) {
           </Linkgatsby>
         </div>
         <div>
-          <a href="https://www.facebook.com/FestivalBrujas/" target="_blank">
+          <a href="https://www.facebook.com/FestivalBrujas/" target="_blank"  rel="noopener noreferrer">
             <Logo
               icon
               src={faceIcon}
@@ -253,6 +268,7 @@ if (mobile) {
           <a
             href="https://www.facebook.com/El-Aquelarre-328246424785272/"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <Logo icon src={faceIcon} title="El Aquelarre" alt="El aquelarre" />
           </a>
@@ -261,6 +277,7 @@ if (mobile) {
           <a
             href="https://www.instagram.com/festival_de_brujas_mx/?hl=es-la"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <Logo
               icon
@@ -274,6 +291,7 @@ if (mobile) {
           <a
             href="https://www.youtube.com/channel/UCLegGX_n-nllzE3Ldngphkw"
             target="_blank"
+            rel="noopener noreferrer"
           >
             <Logo
               icon
@@ -285,6 +303,20 @@ if (mobile) {
         </div>
       </Nav>
       <ImageContainer>
+        <VideoContainer>
+          <videoCard>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/xJdbXDnSrSk"
+            title="Festival Bruja Moderna"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+            </videoCard>
+            <videoCard>
+            <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/Ioz7aMdpGg4" 
+            title="Festival second video"
+            frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen></iframe>
+          </videoCard>
+        </VideoContainer>
+       
+        
         {Object.keys(data).length ? (
           data.allFile.edges.map((image, i) => {
             return (

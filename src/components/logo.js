@@ -23,22 +23,34 @@ const Image = ({ props }) => {
           }
         }
       }
+      logos: file(relativePath: { eq: "logob-negro.jpg" }) {
+        childImageSharp {
+          fluid(maxHeight: 200, maxWidth: 200, quality: 100,jpegProgressive:true) {
+            src
+            originalName
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
     }
   `)
+  
   //...GatsbyImageSharpFluid instead of src
   return (
     <Img
-      title="estrella"
-      sizes={data.placeholderImage.childImageSharp.resize}
-      alt="penta"
+      title="Festival Brujas modernas "
+      sizes={data.logos.childImageSharp.fluid}
+      alt="Brujamoderna"
       style={{
         display: "flex",
         flexDirection: "row",
         justifyContent: "center",
-        height: 80,
-        width: 80,
+        height: 250,
+        width: 250,
+        borderRadius:'8px',
+        marginBottom:'1em'
       }}
-      src={data.placeholderImage.childImageSharp.resize.src}
+      src={data.logos.childImageSharp.fluid.src}
     />
   )
 }

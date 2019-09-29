@@ -177,11 +177,11 @@ const ColumnContainer = styled.ul`
   align-items: unset;
   margin: 2em 1em 2em 1em;
   background-color: #020202;
-  height: ${props => props.mobile? '':'100%'};
-  width: ${props => props.mobile? '87%': '70%'};
+  height: ${props => props.mobil? '':'100%'};
+  width: ${props => props.mobil? '87%': '70%'};
   z-index:101;
-  flex-flow:${props => props.mobile? 'row':''};
-  margin-left${props => props.mobile? '2em':''}
+  flex-flow:${props => props.mobil? 'row':''};
+  margin-left${props => props.mobil? '2em':''}
   & li {
     list-style: none;
     color: black;
@@ -248,7 +248,7 @@ const Navbar = () => {
               duration={500}
               onClick={() => setMobile(false)}  
             >
-              <List mobile>Acerca De</List>
+              <List mobile>Bruja Moderna</List>
             </Link>
             <Link
               activeClass="active"
@@ -259,7 +259,7 @@ const Navbar = () => {
               duration={500}
               onClick={() => setMobile(false)}  
             >
-              <List mobile>Somos!</List>
+              <List mobile>Armonia</List>
             </Link>
             <Link
               activeClass="active"
@@ -288,7 +288,7 @@ const Navbar = () => {
             </Linkgatsby>
             <ColumnContainer mobil>
             <div>
-              <a href="https://www.facebook.com/FestivalBrujas/" target="_blank">
+              <a href="https://www.facebook.com/FestivalBrujas/" target="_blank" rel="noopener noreferrer">
               <Logo
               icon
               src={faceIcon}
@@ -299,7 +299,7 @@ const Navbar = () => {
              
               </div>
               <div>
-              <a href="https://www.facebook.com/El-Aquelarre-328246424785272/" target="_blank">
+              <a href="https://www.facebook.com/El-Aquelarre-328246424785272/" target="_blank"  rel="noopener noreferrer">
               <Logo
               icon
               src={faceIcon}
@@ -310,7 +310,7 @@ const Navbar = () => {
              
               </div>
               <div>
-              <a href="https://www.instagram.com/festival_de_brujas_mx/?hl=es-la" target="_blank">
+              <a href="https://www.instagram.com/festival_de_brujas_mx/?hl=es-la" target="_blank"  rel="noopener noreferrer">
               <Logo
               icon
               src={instagram}
@@ -321,7 +321,7 @@ const Navbar = () => {
              
               </div>
               <div>
-              <a href="https://www.youtube.com/channel/UCLegGX_n-nllzE3Ldngphkw" target="_blank">
+              <a href="https://www.youtube.com/channel/UCLegGX_n-nllzE3Ldngphkw" target="_blank"  rel="noopener noreferrer">
               <Logo
               icon
               src={youtube}
@@ -351,7 +351,7 @@ const Navbar = () => {
           <UnorderContiner>
             
             <div>
-              <a href="https://www.facebook.com/FestivalBrujas/" target="_blank">
+              <a href="https://www.facebook.com/FestivalBrujas/" target="_blank"  rel="noopener noreferrer">
               <Logo
               icon
               src={faceIcon}
@@ -362,7 +362,7 @@ const Navbar = () => {
              
               </div>
               <div>
-              <a href="https://www.facebook.com/El-Aquelarre-328246424785272/" target="_blank">
+              <a href="https://www.facebook.com/El-Aquelarre-328246424785272/" target="_blank"  rel="noopener noreferrer">
               <Logo
               icon
               src={faceIcon}
@@ -373,7 +373,7 @@ const Navbar = () => {
              
               </div>
               <div>
-              <a href="https://www.instagram.com/festival_de_brujas_mx/?hl=es-la" target="_blank">
+              <a href="https://www.instagram.com/festival_de_brujas_mx/?hl=es-la" target="_blank"  rel="noopener noreferrer">
               <Logo
               icon
               src={instagram}
@@ -384,7 +384,7 @@ const Navbar = () => {
              
               </div>
               <div>
-              <a href="https://www.youtube.com/channel/UCLegGX_n-nllzE3Ldngphkw" target="_blank">
+              <a href="https://www.youtube.com/channel/UCLegGX_n-nllzE3Ldngphkw" target="_blank"  rel="noopener noreferrer">
               <Logo
               icon
               src={youtube}
@@ -409,7 +409,7 @@ const Navbar = () => {
               offset={-230}
               duration={500}
             >
-              <List>Acerca de </List>
+              <List>Brujas</List>
             </Link>
 
             <Link
@@ -420,7 +420,7 @@ const Navbar = () => {
               offset={-100}
               duration={500}
             >
-              <List>Nosotros somos!</List>
+              <List>Armonia</List>
             </Link>
 
             <Link

@@ -5,10 +5,11 @@ export default styled.h2`
   font-weight: lighter;
   letter-spacing: 0.75rem;
   @media (max-width:425px){
-    font-size:1.8em;
+    font-size:1.5em;
+    text-align:center;
   }
-   @media (min-width:720px){
-    font-size:5em;
+   @media (min-width:768px){
+    font-size:2em;
   }
   @media (min-width:1024px){
     font-size:3em;

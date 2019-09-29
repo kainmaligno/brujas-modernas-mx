@@ -38,11 +38,23 @@ const Intro = styled.h6`
   text-decoration:none;
 `
 const Portfolio = () => {
-  const data = useStaticQuery(graphql`
-    {
-      cover: file(relativePath: { eq: "cover2.jpeg" }) {
+
+
+   const  data = useStaticQuery(graphql`
+    query{
+      cover: file(relativePath: { eq: "cover2.jpeg" }){
         childImageSharp {
-          fluid(maxHeight: 200, maxWidth: 200, quality: 100) {
+          fluid(maxHeight: 200, maxWidth: 200, quality: 100,jpegProgressive:true) {
+            src
+            originalName
+            ...GatsbyImageSharpFluid
+
+          }
+        }
+      }
+      logo: file(relativePath: { eq: "logob-negro.jpg" }){
+        childImageSharp {
+          fluid(maxHeight: 200, maxWidth: 200, quality: 100,jpegProgressive:true) {
             src
             originalName
             ...GatsbyImageSharpFluid
@@ -67,9 +79,18 @@ const Portfolio = () => {
           />
        </Cardcontainer>
       </Link>
-    
-
-      
+     <Link style={{textDecoration:'none'}} to='galeria'>
+      <Cardcontainer>
+        <Intro>Festival de Brujas</Intro>
+          <Image
+          style={{ borderRadius: "8px" }}
+          fluid={data.logo.childImageSharp.fluid}
+          alt={data.logo.childImageSharp.fluid.originalName}
+          title={data.logo.childImageSharp.fluid.originalName}
+          src={data.logo.childImageSharp.fluid.src}
+          />
+       </Cardcontainer>
+     </Link> 
       {/* {Object.keys(data).length ? (
         data.allFile.edges.map((image, i) => {
           return <Cards image={image.node.childImageSharp.fluid} key={i} />
