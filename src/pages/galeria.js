@@ -10,9 +10,9 @@ import SEO from "../components/seo"
 import Footer from "../components/Footer"
 //componnentes
 import Cards from "../components/Card"
-import faceIcon from "../../public/icons/facebook-brands.svg"
-import instagram from "../../public/icons/instagram.svg"
-import youtube from "../../public/icons/youtube-brands.svg"
+import faceIcon from "../assets/media/facebook-brands.svg"
+import instagram from "../assets/media/instagram.svg"
+import youtube from "../assets/media/youtube-brands.svg"
 
 const ImageContainer = styled.div`
   max-width: 1300px;

@@ -5,9 +5,9 @@ import palete from "../../pallete"
 import device from "../../device"
 import { Link, animateScroll as scroll } from "react-scroll"
 import { Link as Linkgatsby } from "gatsby"
-import faceIcon from "../../../public/icons/facebook-brands.svg"
-import instagram from "../../../public/icons/instagram.svg"
-import youtube from "../../../public/icons/youtube-brands.svg"
+import faceIcon from "../../assets/media/facebook-brands.svg"
+import instagram from "../../assets/media/instagram.svg"
+import youtube from "../../assets/media/youtube-brands.svg"
 
 const Nav = styled.nav`
   width: 100%;
