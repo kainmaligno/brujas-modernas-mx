@@ -2,6 +2,8 @@ module.exports = {
   siteMetadata: {
     title: `Brujas Mexico`,
     description: `Festival De Brujas, Festival de Brujas México `,
+    url: "https://www.festivaldebrujasoficial.com", // No trailing slash allowed!
+    image: "/images/logob-negro.jpg", // Path to your image you placed in the 'static' folder
     author: `@drakarzamael`,
     },
   plugins: [
