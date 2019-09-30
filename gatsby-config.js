@@ -3,7 +3,7 @@ module.exports = {
     title: `Festival De Brujas Festival de Brujas México`,
     description: `Festival de Brujas México creamos eventos, festivales y shows privados para toda persona que vibra con magia. Contrataciones: labrujamoderna.oficial@gmail.com`,
     url: "https://www.festivaldebrujasoficial.com", // No trailing slash allowed!
-    image: "/images/logob-negro.jpg", // Path to your image you placed in the 'static' folder
+    image: "public/static/logob-negro-5f1dd225b7fd899d5e55536a24096385.jpg", // Path to your image you placed in the 'static' folder
     author: `@drakarzamael`,
     },
   plugins: [
