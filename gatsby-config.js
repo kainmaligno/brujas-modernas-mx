@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Festival De Brujas Festival de Brujas México`,
-    description: `	Festival de Brujas México creamos eventos, festivales y shows privados para toda persona que vibra con magia. Contrataciones: labrujamoderna.oficial@gmail.com`,
+    description: `Festival de Brujas México creamos eventos, festivales y shows privados para toda persona que vibra con magia. Contrataciones: labrujamoderna.oficial@gmail.com`,
     url: "https://www.festivaldebrujasoficial.com", // No trailing slash allowed!
     image: "/images/logob-negro.jpg", // Path to your image you placed in the 'static' folder
     author: `@drakarzamael`,
