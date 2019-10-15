@@ -34,21 +34,37 @@ function SEO({ description, lang, meta, title, image, url }) {
         <meta charset="utf-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta property="og:title" content={`${title}`}/>
+        <meta property="og:site_name" content="Festival de brujas modernas."/>
         <meta property="og:description" content={`${metaDescription}`}/>
         <meta property="og:image" content="https://res.cloudinary.com/drakarzamael/image/upload/v1570920161/logob-negro.jpg"/>
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="2160" />
+        <meta property="og:image:height" content="2160" />
+        <meta property="og:image:alt" content="Festival Bruja Moderna Logo" />
+
         <meta property="og:url" content={`${site.siteMetadata.url}`}/>
+        
 
         <meta name="twitter:card" content="summary"/>
         <meta property="twitter:title" content={title} />
         <meta property="twitter:description" content={metaDescription}/>
         <meta property="twitter:image" content="https://res.cloudinary.com/drakarzamael/image/upload/v1570920161/logob-negro.jpg"/>
-        
-        <meta property="" content=""/>
-        <meta property="" content=""/>
-        <meta property="" content=""/>
-        <meta property="" content=""/>
+        <meta property="og:image:type" content="image/jpeg" />
+        <meta property="og:image:width" content="2160" />
+        <meta property="og:image:height" content="2160" />
+        <meta property="og:image:alt" content="Festival Bruja Moderna Logo" />
+        <meta property="og:url" content={`${site.siteMetadata.url}`}/>
 
-        <meta property="og:type" content="article"/>
+{/* 
+        <meta property="facebok:card" content="summary"/>
+        <meta property="facebook:title" content={title}/>
+        <meta property="facebook:decription" content={metaDescription}/>
+        <meta property="facebook:image" content="https://res.cloudinary.com/drakarzamael/image/upload/v1570920161/logob-negro.jpg"/>
+        <meta property="og:url" content={`${site.siteMetadata.url}`}/> */}
+        <meta property="fb:app_id" content="your_app_id" />
+
+
+        <meta property="og:type" content="website"/>
         <meta property="og:locale" content="es_Es"/>
         </Helmet>
   )
