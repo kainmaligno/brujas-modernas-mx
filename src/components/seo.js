@@ -9,7 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import Helmet from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
-//import baner from '../images/logob-negro.jpg'
+import baner from '../images/logob-negro.jpg'
 
 function SEO({ description, lang, meta, title, image, url }) {
   const { site } = useStaticQuery(
@@ -28,75 +28,34 @@ function SEO({ description, lang, meta, title, image, url }) {
     `
   )
   const metaDescription = description || site.siteMetadata.description
- console.log(site.siteMetadata.image)
   return (
-    <Helmet
-      htmlAttributes={{
-        lang,
-      }}
-      title={title}
-      titleTemplate={`%s | ${site.siteMetadata.title}`}
-      meta={[
-        {
-          name: `description`,
-          content: metaDescription,
-        },
-        {
-          property: `og:title`,
-          content: title,
-        },
-        {
-          property: `og:description`,
-          content: metaDescription,
-        },
-        {
-          property:`og:image`,
-          content: site.siteMetadata.image
-        },
-        {
-          property:`og:url`,
-          content:site.siteMetadata.url,
-        },
-        {
-          property:`og:author`,
-          content: site.siteMetadata.author,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: site.siteMetadata.author,
-        },
-        {
-          name: `twitter:title`,
-          content: title,
-        },
-        {
-          name: `twitter:description`,
-          content: metaDescription,
-        },
-        {
-          name:`twitter:image`,
-          content: site.siteMetadata.image
-        },
-      ].concat(meta)}
-    />
+    <Helmet>
+        <title>{`${title} | ${site.siteMetadata.title}`}</title>
+        <meta charset="utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta property="og:title" content={`${title}`}/>
+        <meta property="og:description" content={`${metaDescription}`}/>
+        <meta property="og:image" content="https://res.cloudinary.com/drakarzamael/image/upload/v1570920161/logob-negro.jpg"/>
+        <meta property="og:url" content={`${site.siteMetadata.url}`}/>
 
+        <meta name="twitter:card" content="summary"/>
+        <meta property="twitter:title" content={title} />
+        <meta property="twitter:description" content={metaDescription}/>
+        <meta property="twitter:image" content="https://res.cloudinary.com/drakarzamael/image/upload/v1570920161/logob-negro.jpg"/>
+        
+        <meta property="" content=""/>
+        <meta property="" content=""/>
+        <meta property="" content=""/>
+        <meta property="" content=""/>
+
+        <meta property="og:type" content="article"/>
+        <meta property="og:locale" content="es_Es"/>
+        </Helmet>
   )
 
 }
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
+
 
 SEO.propTypes = {
   description: PropTypes.string,
@@ -106,5 +65,12 @@ SEO.propTypes = {
   image: PropTypes.string,
   url:PropTypes.string,
 }
-
+SEO.defaultProps = {
+  lang: `en`,
+  meta: [],
+  description: ``,
+  title:``,
+  image:``,
+  url:``
+}
 export default SEO
