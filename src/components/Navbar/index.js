@@ -50,6 +50,13 @@ const UnorderContiner = styled.ul`
     width: max-content;
     
   }
+
+  @media ${device.laptopL}{
+    flex-wrap:nowrap;
+  }
+  @media ${device.desktop}{
+    flex-wrap:nowrap;
+  }
 `
 const List = styled.li`
   text-decoration: none;

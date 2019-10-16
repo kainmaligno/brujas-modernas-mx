@@ -79,7 +79,7 @@ const Portfolio = () => {
           />
        </Cardcontainer>
       </Link>
-     <Link style={{textDecoration:'none'}} to='galeria'>
+     <Link style={{textDecoration:'none'}} to='/galeria/'>
       <Cardcontainer>
         <Intro>Festival de Brujas</Intro>
           <Image
